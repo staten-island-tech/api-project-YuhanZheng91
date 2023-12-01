@@ -1,0 +1,12 @@
+:root{
+    --h: 3rem;
+}
+
+*,
+body,
+html{
+    padding: 0%;
+    margin: 0%;
+    text-align: center;
+    align-items: center;
+}
