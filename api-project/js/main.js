@@ -1,7 +1,7 @@
 import '../css/style.css';
 //npm run dev; npm run preview
 
-const URL = `https://api.isevenapi.xyz/api/`;
+const URL = `https://random-d.uk/api/v2/quack`;
 async function getData(URL){
     try{
         //whem u ask the computer for smth, you are requesting a response REST APIs; relational estfdjkg transfer;
@@ -12,10 +12,10 @@ async function getData(URL){
         }
         //convert response to JSON
         const data = await response.json();
-        document.querySelector("h1").textContent = data.content;
+        document.querySelector("h2").textContent = data.content;
     } catch (error) {
         console.log(error, "uh oh");
-        document.querySelector("h1").textContent = "sdcbvjhb";
+        document.querySelector("h2").textContent = "something happened";
     }
 }
 getData(URL);

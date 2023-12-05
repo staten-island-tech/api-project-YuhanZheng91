@@ -1,5 +1,5 @@
 :root{
-    --h: 3rem;
+    --a-color: #e3c4f1;
 }
 
 *,
@@ -9,4 +9,14 @@ html{
     margin: 0%;
     text-align: center;
     align-items: center;
+}
+
+body{
+    background-color: var(--a-color);
+    color: white;
+}
+
+.insert-button{
+    margin: 2%;
+    padding: 0.25% 1%;
 }
