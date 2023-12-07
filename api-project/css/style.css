@@ -1,5 +1,6 @@
 :root{
     --a-color: #e3c4f1;
+    --dark-purple: #c370ca;
 }
 
 *,
@@ -13,10 +14,23 @@ html{
 
 body{
     background-color: var(--a-color);
-    color: white;
+    color: var(--dark-purple);
 }
 
-.insert-button{
+.enter-button{
     margin: 2%;
     padding: 0.25% 1%;
+    background-color: var(--dark-purple);
+    color: white;
+    border-color: var(--dark-purple);
+}
+
+.text-box{
+    color: var(--dark-purple);
+    border-color: var(--dark-purple);
+    margin: 2%;
+}
+
+h1{
+    margin: 2%;
 }
