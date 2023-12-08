@@ -9,15 +9,22 @@ const DOMSelectors = {
     count: document.querySelector(".text-box"),
 };
 //const URL = `https://shibe.online/api/shibes?${DOMSelectors.count}`;
-const URL = `https://shibe.online/api/shibes`;
+let URL = `https://shibe.online/api/shibes`;
 const response = await fetch(URL);
 console.log(response);
 console.log(URL);
 
 async function displayDogs(){
+/*     let data= await URL.json();
+    console.log(data);
+    data.results.forEach((data) =>
+        console.log(data)
+    );
+ */
     DOMSelectors.form.addEventListener('submit', function(event){
         event.preventDefault();
-        const URL =+ `https://shibe.online/api/shibes${DOMSelectors.count}`;
+        const number = DOMSelectors.count;
+        let URL = `https://shibe.online/api/shibes?count=${number}`;
         console.log(URL);
     })
 }
@@ -42,3 +49,6 @@ async function getData(URL){
     }
 }
 getData(URL); */
+
+// smth?limit=[limit]&
+//add ?api-key=[] or ?key=[] ;; depends on api
