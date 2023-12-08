@@ -6,29 +6,31 @@ import '../css/style.css';
 
 const DOMSelectors = {
     form: document.querySelector(".formm"),
-    count: document.querySelector(".text-box"),
+    word: document.querySelector(".text-box"),
 };
-//const URL = `https://shibe.online/api/shibes?${DOMSelectors.count}`;
-let URL = `https://shibe.online/api/shibes`;
-const response = await fetch(URL);
-console.log(response);
+
+//const URL = `https://shibe.online/api/shibes?count=[${DOMSelectors.count}]`;
+let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
+// const response = await fetch(URL);
+// console.log(response);
 console.log(URL);
 
-async function displayDogs(){
-/*     let data= await URL.json();
+
+async function something(){
+    /*     let data= await URL.json();
     console.log(data);
     data.results.forEach((data) =>
-        console.log(data)
-    );
- */
+    console.log(data)
+    ); */
+    
     DOMSelectors.form.addEventListener('submit', function(event){
         event.preventDefault();
-        const number = DOMSelectors.count;
-        let URL = `https://shibe.online/api/shibes?count=${number}`;
+        const wordLink = DOMSelectors.word;
+        let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordLink}`;
         console.log(URL);
     })
 }
-displayDogs();
+something();
 
 
 /* 
