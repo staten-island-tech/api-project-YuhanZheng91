@@ -1,5 +1,5 @@
 import '../css/style.css';
-//npm run dev; npm run preview
+//npm build; npm run preview
 
 //const URL = `https://random-d.uk/api/v2/quack`;
 //const URL = `https://random.dog/woof.json`;
@@ -10,28 +10,51 @@ const DOMSelectors = {
 };
 
 //const URL = `https://shibe.online/api/shibes?count=[${DOMSelectors.count}]`;
-let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
-// const response = await fetch(URL);
-// console.log(response);
+let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/word`;
+const response = await fetch(URL);
+console.log(response);
 console.log(URL);
 
+async function getData(){
+    let response = await fetch(URL);
+    let data = await response.json();
+    console.log(data);
+    // let data = await URL.json();
+    // console.log(data);
+    // data.results.forEach((data) =>
+    // console.log(data)
+    // ); 
+}
+getData();
 
 async function something(){
-    /*     let data= await URL.json();
-    console.log(data);
-    data.results.forEach((data) =>
-    console.log(data)
-    ); */
-    
     DOMSelectors.form.addEventListener('submit', function(event){
         event.preventDefault();
         const wordLink = DOMSelectors.word;
         let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordLink}`;
         console.log(URL);
+        create();
     })
 }
-something();
+something(); 
 
+function create(){
+    const card = `<div class="card"
+    <h3> hello </h3>
+    <div class="meanings">
+        <h4> Part of Speech: [] </h4>
+        <h5> Definition: [] </h5>
+        <h5> Synonym(s): [] </h5>
+        <h5> Antonyms(s): [] </h5>
+        <h5> Example Sentence: [] </h5>
+    </div>
+    <h6> Source: [] </h6>
+    <h6> License: [] </h6>
+    </div>
+    `;
+    document.querySelector(".container").insertAdjacentHTML("afterbegin", card);
+    
+}
 
 /* 
 async function getData(URL){

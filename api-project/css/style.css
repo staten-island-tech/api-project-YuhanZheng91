@@ -33,4 +33,21 @@ body{
 
 h1{
     margin: 2%;
+    font-weight: bold;
+    font-size: 190%;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    background-color: white;
+    width: 20%;
+    text-align: center;
+    margin: 3%;
+    padding: 3%;
 }
