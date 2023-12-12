@@ -39,17 +39,20 @@ async function something(){
 something(); 
 
 function create(){
-    const card = `<div class="card"
-    <h3> hello </h3>
-    <div class="meanings">
-        <h4> Part of Speech: [] </h4>
-        <h5> Definition: [] </h5>
-        <h5> Synonym(s): [] </h5>
-        <h5> Antonyms(s): [] </h5>
-        <h5> Example Sentence: [] </h5>
-    </div>
-    <h6> Source: [] </h6>
-    <h6> License: [] </h6>
+    const card = `
+    <div class="card"
+            <h3> [hello] </h3>
+        <div class="meanings">
+            <h4> <i> noun </i> </h4>
+            <h5> Definition: [] </h5>
+            <h5> Synonym(s): [] </h5>
+            <h5> Antonyms(s): [] </h5>
+            <h5> Sentence: [] </h5>
+        </div>
+        <div class="sources">
+            <h6> Source: [] </h6>
+            <h6> License: [] </h6>
+        </div>
     </div>
     `;
     document.querySelector(".container").insertAdjacentHTML("afterbegin", card);
