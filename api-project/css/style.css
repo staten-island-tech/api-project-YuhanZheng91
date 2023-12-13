@@ -44,9 +44,10 @@ h1{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .card{
     background-color: white;
-    width: 20%;
+    width: 70%;
     text-align: center;
     margin: 3%;
     padding: 3%;
@@ -55,20 +56,37 @@ h1{
 h3{
     font-weight: bold;
     font-size: 120%;
-    padding: 5%;
-    margin: 3%
+    padding: 0.5%;
+    margin: 3% 3% 0% 3%;
 }
 
 h4{
     font-weight: normal;
-    font-size: 80%;
+    font-size: 75%;
+    margin: 0% 0% 2% 0%;
+    font-style: italic;
+}
+
+.def{
+    font-size: 95%;
 }
 
 h5{
-    font-size: 90%;
+    font-size: 80%;
 }
 
 h6{
     font-size: 70%;
-    padding: 2%;
+}
+
+.s-head{
+    padding: 2% 0% 0% 0%;
+}
+
+.remove-b{
+    padding: 1%;
+    margin: 3% 2% 0.25% 2%;
+    background-color: #c370ca;
+    border-color: #c370ca;
+    color: white;
 }

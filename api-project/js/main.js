@@ -34,29 +34,37 @@ async function something(){
         let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordLink}`;
         console.log(URL);
         create();
+        removeCard();
     })
 }
 something(); 
 
 function create(){
     const card = `
-    <div class="card"
+    <div class="card">
             <h3> [hello] </h3>
         <div class="meanings">
-            <h4> <i> noun </i> </h4>
-            <h5> Definition: [] </h5>
+            <h4> noun </h4>
+            <h5 class="def"> Definition: [] </h5>
             <h5> Synonym(s): [] </h5>
             <h5> Antonyms(s): [] </h5>
             <h5> Sentence: [] </h5>
         </div>
+        <input type='button' value="Remove" class="remove-b">
         <div class="sources">
-            <h6> Source: [] </h6>
+            <h6 class="s-head"> Source: [] </h6>
             <h6> License: [] </h6>
         </div>
     </div>
     `;
     document.querySelector(".container").insertAdjacentHTML("afterbegin", card);
     
+}
+
+function removeCard(){
+    document.querySelector(".remove-b").addEventListener('click', function(){
+        const par = card;
+    })
 }
 
 /* 
