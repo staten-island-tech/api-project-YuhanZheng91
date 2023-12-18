@@ -48,9 +48,9 @@ function create(){
             <h5 class="def"> Definition: [] </h5>
             <h5> Synonym(s): [] </h5>
             <h5> Antonyms(s): [] </h5>
-            <h5> Sentence: [] </h5>
+            <h5 class = "ex-sentence" > Sentence: [] </h5>
         </div>
-        <input type='button' value="Remove" class="remove-b">
+        <input type='button' value="remove" class="remove-b">
         <div class="sources">
             <h6 class="s-head"> Source: [] </h6>
             <h6> License: [] </h6>
@@ -63,7 +63,6 @@ function create(){
 
 function removeCard(){
     document.querySelector(".remove-b").addEventListener('click', function(){
-        const par = card;
     })
 }
 

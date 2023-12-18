@@ -69,14 +69,19 @@ h4{
 
 .def{
     font-size: 95%;
+    font-weight: bold;
+    padding: 0% 0% 1% 0%;
 }
 
 h5{
     font-size: 80%;
+    font-weight: normal;
 }
 
 h6{
     font-size: 70%;
+    font-weight: normal;
+    font-style: italic;
 }
 
 .s-head{
@@ -89,4 +94,9 @@ h6{
     background-color: #c370ca;
     border-color: #c370ca;
     color: white;
+}
+
+.ex-sentence{
+    padding: 1%;
+    font-weight: bold;
 }
