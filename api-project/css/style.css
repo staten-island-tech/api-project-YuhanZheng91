@@ -17,12 +17,21 @@ body{
     color: var(--dark-purple);
 }
 
+form{
+    background-color: var(--dark-purple);
+    color: var(--a-color);
+    width: 85%;
+    text-align: center;
+    display: flex;
+    padding: 2%;
+}
+
 .enter-button{
     margin: 2%;
-    padding: 0.25% 1%;
-    background-color: var(--dark-purple);
-    color: white;
-    border-color: var(--dark-purple);
+    padding: 1% 2%;
+    background-color: var(--a-color);
+    color: #ad59b8;
+    border-color: #aa262600;
 }
 
 .text-box{
@@ -46,7 +55,7 @@ h1{
 }
 
 .card{
-    background-color: white;
+    background-color: #ffffff;
     width: 70%;
     text-align: center;
     margin: 3%;
@@ -92,8 +101,8 @@ h6{
     padding: 1%;
     margin: 3% 2% 0.25% 2%;
     background-color: #c370ca;
-    border-color: #c370ca;
-    color: white;
+    border-color: #aa262600;
+    color: #ffffff;
 }
 
 .ex-sentence{
