@@ -34,26 +34,26 @@ async function something(){
         let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordLink}`;
         console.log(URL);
         create();
-        removeCard();
     })
 }
 something(); 
 
 function create(){
+    document.querySelector(".container").innerHTML = '';
     const card = `
     <div class="card">
-            <h3> [hello] </h3>
+            <h3> ${URL.word} </h3>
         <div class="meanings">
-            <h4> noun </h4>
-            <h5 class="def"> Definition: [] </h5>
-            <h5> Synonym(s): [] </h5>
-            <h5> Antonyms(s): [] </h5>
-            <h5 class = "ex-sentence" > Sentence: [] </h5>
+            <h4> ${URL.partOfSpeech} </h4>
+            <h5 class="def"> Definition: ${URL.definitions} </h5>
+            <h5> Synonym(s): ${URL.synonyms} </h5>
+            <h5> Antonyms(s): ${URL.antonyms} </h5>
+            <h5 class = "ex-sentence" > Sentence: ${URL.example} </h5>
         </div>
         <input type='button' value="remove" class="remove-b">
         <div class="sources">
-            <h6 class="s-head"> Source: [] </h6>
-            <h6> License: [] </h6>
+            <h6 class="s-head"> Source: "${URL.sourceUrls}"  </h6>
+            <h6> License: ${URL.license.name} && ${URL.license.url}</h6>
         </div>
     </div>
     `;
@@ -61,10 +61,10 @@ function create(){
     
 }
 
-function removeCard(){
+/* function removeCard(){       // if you want the card to be removed in a list of "history", or previously searched words
     document.querySelector(".remove-b").addEventListener('click', function(){
     })
-}
+} */
 
 /* 
 async function getData(URL){
