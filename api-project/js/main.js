@@ -30,7 +30,7 @@ getData();
 async function something(){
     DOMSelectors.form.addEventListener('submit', function(event){
         event.preventDefault();
-        const wordLink = DOMSelectors.word;
+        const wordLink = DOMSelectors.word.value;
         let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordLink}`;
         console.log(URL);
         create();
