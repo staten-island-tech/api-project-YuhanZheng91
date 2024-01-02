@@ -1,14 +1,16 @@
 :root{
     --a-color: #e3c4f1;
     --dark-purple: #c370ca;
+    --somewhat-dark-purple: #96399e;
+    --darker-purple: #792e80;
 
     --h4: 75%;
-    --h1: 190%;
+    --h1: 210%;
     --definition-text: 90%;
     --h3: 120%;
     --h5: 80%;
     --source-texts: 70%;
-    --h2: 105%;
+    --h2: 100%;
     --h6: 70%;
 }
 
@@ -23,12 +25,11 @@ html{
 
 body{
     background-color: var(--a-color);
-    color: var(--dark-purple);
+    color: var(--darker-purple);
 }
 
 form{
-    background-color: var(--dark-purple);
-    color: var(--a-color);
+    color: var(--darker-purple);
     width: 85%;
     height: 30%;
     font-size: var(--h2);
@@ -42,15 +43,16 @@ form{
 .enter-button{
     margin: 2%;
     padding: 1% 2%;
-    background-color: var(--a-color);
-    color: #ad59b8;
-    border-color: #aa262600;
+    background-color: var(--darker-purple);
+    color: var(--a-color);
+    border-color: var(--darker-purple);
+    /* border-color: #aa262600; */
     font-size: 100%;
 }
 
 .text-box{
     color: var(--dark-purple);
-    border-color: var(--dark-purple);
+    border-color: var(--somewhat-dark-purple);
     margin: 2%;
 }
 
@@ -115,7 +117,7 @@ h6{
     padding: 1%;
     margin: 3% 2% 0.25% 2%;
     background-color: #c370ca;
-    border-color: #aa262600;
+/*  border-color: #aa262600; */
     color: #ffffff;
 }
 

@@ -6,8 +6,6 @@ const DOMSelectors = {
     container: document.querySelector(".container"),
 };
 
-let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/word`;
-
 async function getData(){
     DOMSelectors.form.addEventListener('submit', async function(event){
         event.preventDefault();
@@ -29,10 +27,6 @@ async function getData(){
 }
 getData(); 
 
-async function noidea(){
-    
-}
-
 async function create(data){
     document.querySelector(".container").innerHTML = ``;
     const card = `
@@ -41,7 +35,7 @@ async function create(data){
     document.querySelector(".container").innerHTML += card;
 }
 
-/* 
+/*
 function create(data){
     document.querySelector(".container").innerHTML = '';
     const card = `
@@ -63,4 +57,6 @@ function create(data){
     document.querySelector(".container").insertAdjacentHTML("afterbegin", card);
     
 }
- */
+*/
+
+//wave extension firefox ; contrast & error stuff
