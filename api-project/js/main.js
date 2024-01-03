@@ -18,28 +18,44 @@ async function getData(){
             let response = await fetch(URL);
             let data = await response.json();
             console.log(data);
+            console.log(data[0].word);
             create(data);
             document.querySelector("h7").textContent = "";
         } catch (error) {
             console.log(error, "Uh oh! Something went wrong ...")
-            document.querySelector("h7").textContent = "Please make sure the word is recognized as an official word and/or enter a word.";
+            document.querySelector("h7").textContent = "Please enter a word.";
         }
     })
 }
 getData();
 
 async function create(data){
-    const diction = data.word;
+    const diction = data[0].word;
     DOMSelectors.container.innerHTML = ``;
     const card = `
-    <div class="card">
-    <h3> ${diction} </h3>
+    <div class= "card">
+    <h3> ${diction}</h3>
     </div>
     `;
     document.querySelector(".container").innerHTML += card;
+    
 }
 
 
+/*     <div class="card">
+            <h3> ${diction} </h3>
+        <div class="meanings">
+            <h4> ${data[0].partOfSpeech} </h4>
+            <h5 class="def"> Definition: ${data[0].meanings.definitions.definition} </h5>
+            <h5> Synonym(s): ${data[0].meanings.synonyms} </h5>
+            <h5> Antonyms(s): ${data[0].meanings.antonyms} </h5>
+            <h5 class = "ex-sentence"> Sentence: ${data[0].meanings.example} </h5>
+        </div>
+        <div class="sources">
+            <h6 class="s-head"> Source: "${data[0].sourceUrls}"  </h6>
+            <h6> License: ${data[0].license.name}, ${data[0].license.url}</h6>
+        </div>
+    </div> */
 /*
 function create(data){
     document.querySelector(".container").innerHTML = '';
