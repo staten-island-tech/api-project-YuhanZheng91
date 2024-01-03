@@ -19,6 +19,21 @@ async function getData(){
             let data = await response.json();
             console.log(data);
             console.log(data[0].word);
+            console.log(data[0].phonetic);
+            const mean = data[0].meanings;
+            mean.forEach(element => {
+                console.log(element.partOfSpeech);
+            });
+            mean.forEach(element => {
+                console.log(element.definitions);
+            });
+            mean.forEach(element => {
+                console.log(element.synonyms);
+            })
+            mean.forEach(element => {
+                console.log(element.antonyms);
+            })
+
             create(data);
             document.querySelector("h7").textContent = "";
         } catch (error) {
@@ -30,17 +45,21 @@ async function getData(){
 getData();
 
 async function create(data){
-    const diction = data[0].word;
     DOMSelectors.container.innerHTML = ``;
+    const diction = data[0].word;
     const card = `
     <div class= "card">
     <h3> ${diction}</h3>
+    <div class="meanings">
+        </div>
     </div>
     `;
     document.querySelector(".container").innerHTML += card;
-    
 }
 
+function separate(){
+
+}
 
 /*     <div class="card">
             <h3> ${diction} </h3>
@@ -55,7 +74,8 @@ async function create(data){
             <h6 class="s-head"> Source: "${data[0].sourceUrls}"  </h6>
             <h6> License: ${data[0].license.name}, ${data[0].license.url}</h6>
         </div>
-    </div> */
+    </div> 
+*/
 /*
 function create(data){
     document.querySelector(".container").innerHTML = '';
