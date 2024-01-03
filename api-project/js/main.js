@@ -19,21 +19,26 @@ async function getData(){
             let data = await response.json();
             console.log(data);
             create(data);
+            document.querySelector("h7").textContent = "";
         } catch (error) {
-            console.log(error, "Uh oh!")
+            console.log(error, "Uh oh! Something went wrong ...")
+            document.querySelector("h7").textContent = "Please make sure the word is recognized as an official word and/or enter a word.";
         }
-
     })
 }
-getData(); 
+getData();
 
 async function create(data){
-    document.querySelector(".container").innerHTML = ``;
+    const diction = data.word;
+    DOMSelectors.container.innerHTML = ``;
     const card = `
-    <h3> ${data.word} </h3>
+    <div class="card">
+    <h3> ${diction} </h3>
+    </div>
     `;
     document.querySelector(".container").innerHTML += card;
 }
+
 
 /*
 function create(data){

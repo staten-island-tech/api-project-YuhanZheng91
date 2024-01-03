@@ -30,11 +30,12 @@ body{
 
 form{
     color: var(--darker-purple);
-    width: 85%;
+    width: 49%;
     height: 30%;
     font-size: var(--h2);
     text-align: center;
     align-items: center;
+    justify-content: space-evenly;
     display: flex;
     padding: 2%;
     margin: auto;
@@ -54,6 +55,8 @@ form{
     color: var(--dark-purple);
     border-color: var(--somewhat-dark-purple);
     margin: 2%;
+    width: 50%;
+    text-align: left;
 }
 
 h1{
@@ -107,6 +110,11 @@ h6{
     font-size: var(--h6);
     font-weight: normal;
     font-style: italic;
+}
+
+h7{
+    color: #467878;
+    padding: 2%;
 }
 
 .s-head{
