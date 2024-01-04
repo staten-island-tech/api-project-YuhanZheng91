@@ -44,38 +44,33 @@ async function getData(){
 }
 getData();
 
-async function create(data){
+async function create(data) {
     DOMSelectors.container.innerHTML = ``;
     const diction = data[0].word;
-    const card = `
-    <div class= "card">
-    <h3> ${diction}</h3>
-    <div class="meanings">
-        </div>
-    </div>
-    `;
-    document.querySelector(".container").innerHTML += card;
+    const meanings = data[0].meanings;
+
+    meanings.forEach((meaning) => {
+        const card = `
+            <div class="card">
+                <h3>${diction}</h3>
+                <div class="meanings">
+                    <h4>${meaning.partOfSpeech}</h4>
+                    <h5 class="def">Definition: ${meaning.definitions[0].definition}</h5>
+                    <h5>Synonym(s): ${meaning.synonyms}</h5>
+                    <h5>Antonyms(s): ${meaning.antonyms}</h5>
+                    <h5 class="ex-sentence">Sentence: ${meaning.definitions[0].example}</h5>
+                </div>
+                <div class="sources">
+                    <h6 class="s-head">Source: "${data[0].sourceUrls}"</h6>
+                    <h6>License: ${data[0].license.name}, ${data[0].license.url}</h6>
+                </div>
+            </div>
+        `;
+        document.querySelector(".container").innerHTML += card;
+    });
 }
 
-function separate(){
 
-}
-
-/*     <div class="card">
-            <h3> ${diction} </h3>
-        <div class="meanings">
-            <h4> ${data[0].partOfSpeech} </h4>
-            <h5 class="def"> Definition: ${data[0].meanings.definitions.definition} </h5>
-            <h5> Synonym(s): ${data[0].meanings.synonyms} </h5>
-            <h5> Antonyms(s): ${data[0].meanings.antonyms} </h5>
-            <h5 class = "ex-sentence"> Sentence: ${data[0].meanings.example} </h5>
-        </div>
-        <div class="sources">
-            <h6 class="s-head"> Source: "${data[0].sourceUrls}"  </h6>
-            <h6> License: ${data[0].license.name}, ${data[0].license.url}</h6>
-        </div>
-    </div> 
-*/
 /*
 function create(data){
     document.querySelector(".container").innerHTML = '';
@@ -99,5 +94,3 @@ function create(data){
     
 }
 */
-
-//wave extension firefox ; contrast & error stuff
