@@ -79,6 +79,7 @@ h1{
     text-align: center;
     margin: 3%;
     padding: 3%;
+    height: max-content;
 }
 
 h3{
