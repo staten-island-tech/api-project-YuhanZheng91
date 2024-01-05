@@ -58,7 +58,6 @@ async function create(data) {
                     <h5 class="def">Definition: ${meaning.definitions[0].definition}</h5>
                     <h5>Synonym(s): ${meaning.synonyms}</h5>
                     <h5>Antonyms(s): ${meaning.antonyms}</h5>
-                    <h5 class="ex-sentence">Sentence: ${meaning.definitions[0].example}</h5>
                 </div>
                 <div class="sources">
                     <h6 class="s-head">Source: "${data[0].sourceUrls}"</h6>
@@ -69,6 +68,7 @@ async function create(data) {
         document.querySelector(".container").innerHTML += card;
     });
 }
+
 
 
 /*
