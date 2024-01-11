@@ -1,10 +1,42 @@
 import '../css/style.css';
 
+
 const DOMSelectors = {
     form: document.querySelector(".formm"),
     word: document.querySelector(".text-box"),
     container: document.querySelector(".container"),
 };
+
+
+async function startDa(){
+    let URLi = `https://api.dictionaryapi.dev/api/v2/entries/en/dictionary`;
+    try {
+        let response = await fetch(URLi);
+        let data = await response.json();
+        console.log(data);
+        const dictMeaning = data[0].meanings;
+        const cardI = `
+        <div class="card">
+                <h3>Dictionary</h3>
+                <div class="meanings">
+                    <h4>${dictMeaning[0].partOfSpeech}</h4>
+                    <h5 class="def">Definition: ${dictMeaning.definitions[0].definition}</h5>
+                    <h5>Synonym(s): ${dictMeaning.synonyms} </h5>
+                    <h5>Antonyms(s): ${dictMeaning.antonyms}</h5>
+                </div>
+                <div class="sources">
+                    <h6 class="s-head">Source: "${data[0].sourceUrls}"</h6>
+                    <h6>License: ${data[0].license.name}, ${data[0].license.url}</h6>
+                </div>
+            </div>`;
+            DOMSelectors.container.innerHTML = cardI;
+       
+    } catch (error) {
+        console.log(error, "Uh oh! Something went wrong ...")
+    }
+}
+startDa();
+
 
 async function getData(){
     DOMSelectors.form.addEventListener('submit', async function(event){
@@ -13,6 +45,7 @@ async function getData(){
         let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordLink}`;
         console.log(URL);
         create();
+
 
         try {
             let response = await fetch(URL);
@@ -34,6 +67,7 @@ async function getData(){
                 console.log(element.antonyms);
             })
 
+
             create(data);
             document.querySelector("h7").textContent = "";
         } catch (error) {
@@ -44,10 +78,12 @@ async function getData(){
 }
 getData();
 
+
 async function create(data) {
     DOMSelectors.container.innerHTML = ``;
     const diction = data[0].word;
     const meanings = data[0].meanings;
+
 
     meanings.forEach((meaning) => {
         const card = `
