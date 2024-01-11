@@ -20,7 +20,7 @@ async function startDa(){
                 <h3>Dictionary</h3>
                 <div class="meanings">
                     <h4>${dictMeaning[0].partOfSpeech}</h4>
-                    <h5 class="def">Definition: ${dictMeaning.definitions[0].definition}</h5>
+                    <h5 class="def">Definition: ${dictMeaning[0].definitions[0].definition}</h5>
                     <h5>Synonym(s): ${dictMeaning.synonyms} </h5>
                     <h5>Antonyms(s): ${dictMeaning.antonyms}</h5>
                 </div>
