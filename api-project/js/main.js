@@ -78,7 +78,6 @@ async function getData(){
 }
 getData();
 
-
 async function create(data) {
     DOMSelectors.container.innerHTML = ``;
     const diction = data[0].word;

@@ -52,8 +52,8 @@ form{
 }
 
 .text-box{
-    color: var(--dark-purple);
-    border-color: var(--somewhat-dark-purple);
+    color: var(--somewhat-dark-purple);
+    border-color: var(--darker-purple);
     margin: 2%;
     width: 50%;
     text-align: left;
