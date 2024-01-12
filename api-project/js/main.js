@@ -21,8 +21,8 @@ async function startDa(){
                 <div class="meanings">
                     <h4>${dictMeaning[0].partOfSpeech}</h4>
                     <h5 class="def">Definition: ${dictMeaning[0].definitions[0].definition}</h5>
-                    <h5>Synonym(s): ${dictMeaning.synonyms} </h5>
-                    <h5>Antonyms(s): ${dictMeaning.antonyms}</h5>
+                    <h5>Synonym(s): ${dictMeaning[0].synonyms} </h5>
+                    <h5>Antonyms(s): ${dictMeaning[0].antonyms}</h5>
                 </div>
                 <div class="sources">
                     <h6 class="s-head">Source: "${data[0].sourceUrls}"</h6>
